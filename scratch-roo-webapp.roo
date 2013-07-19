@@ -22,5 +22,5 @@ json all
 // Setup all the scafolding for a RESTful JSON webapp.
 web mvc json setup
 
-// Create a controller for each the JPA entity, in this case that is only the User.
+// Create a controller for each of the JPA entity, in this case that is only the User.
 web mvc json all
