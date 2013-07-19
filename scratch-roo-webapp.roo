@@ -1,0 +1,26 @@
+// Create the project with the package "scratch.roo.webapp"
+project --topLevelPackage scratch.roo.webapp --projectName scratch-roo-webapp
+
+// Setup JPA database persistence using Hibernate and an HSQL DB.
+jpa setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT
+
+// Create a new domain class "scratch.roo.webapp.data.RooUser".
+// Integration tests are automatically generated for this entity.
+// Reserved wards are permitted so that the class can be called User.
+// The equals and hashCode methods are added because they are always useful.
+entity jpa --class scratch.roo.webapp.data.User --testAutomatically --permitReservedWords --equals
+
+// Add the fields email, firstName, and lastName to the RooUser class.
+// Also set the email to be unique and not null.
+field string email --unique true --notNull true
+field string firstName
+field string lastName
+
+// Add JSON serialisation support to the RooUser class.
+json all
+
+// Setup all the scafolding for a RESTful JSON webapp.
+web mvc json setup
+
+// Create a controller for each the JPA entity, in this case that is only the RooUser.
+web mvc json all
