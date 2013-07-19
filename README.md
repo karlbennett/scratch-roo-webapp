@@ -37,7 +37,7 @@ The project is now ready to run with either the tomcat or jetty plugins.
 
     $ mvn jetty:run
 
-When the webapp is running it is possible to carry out crud operations on simple users with the following REST calls.
+When the webapp is running it is possible to carry out CRUD operations on simple users with the following REST calls.
 
 ###### Create
     $ curl -v -XPOST -H "Content-Type:application/json" http://localhost:8080/scratch-roo-webapp/users -d '{
