@@ -5,14 +5,23 @@ A very simple webapp that can be used to try out Spring Roo.
 
 Because of the nature of Spring Roo there is no actual Java code in this project, there is just a simple Roo script.
 
-To run this project you will first have to [install Spring Roo](http://static.springsource.org/spring-roo/reference/html/intro.html#intro-installation "Install Spring Roo").
-* One thing to note about the installation. If you have installed Spring Roo into your `/opt` directory as `root` it will not start up correctly. This is because it tries to create a `/cache` directory in the `$ROO_HOME` directory which can only be written to by `root`. So to fix this you will need to edit the `$ROO_HOME/bin/roo.sh` file and edit the following line as follows.
-    Change:
-    ROO_OSGI_FRAMEWORK_STORAGE="$ROO_HOME/cache"
-    To:
-    ROO_OSGI_FRAMEWORK_STORAGE="$HOME/.roo/cache"
+To run this project you will first have to
+[install Spring Roo](http://static.springsource.org/spring-roo/reference/html/intro.html#intro-installation "Install Spring Roo").
 
-Spring Roo requires Apache Maven to be installed as well so if you haven't already [install Maven](http://maven.apache.org/download.cgi "Install Maven").
+One thing to note about the installation. If you have installed Spring Roo into your `/opt` directory as `root` it will 
+not start up correctly. This is because it tries to create a `$ROO_HOME/cache` directory which can only be written to by
+`root`. So to fix this you will need to edit the `$ROO_HOME/bin/roo.sh` file and edit the following line.
+
+Change:
+
+     ROO_OSGI_FRAMEWORK_STORAGE="$ROO_HOME/cache"
+
+To:
+
+     ROO_OSGI_FRAMEWORK_STORAGE="$HOME/.roo/cache"
+
+Spring Roo requires Apache Maven to be installed as well so if you haven't already,
+[install Maven](http://maven.apache.org/download.cgi "Install Maven").
 
 Once the installation is complete navigate to the projects directory, start up Spring Roo, and run the Roo script.
 
