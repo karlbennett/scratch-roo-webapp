@@ -38,13 +38,13 @@ When the webapp is running it is possible to carry out crud operations on simple
     }'
 
 ###### Retrieve
-    $ curl -XGET -H "Accept:application/json" http://localhost:8080/scratch-jee-webapp/scratch/users
-    $ curl -XGET -H "Accept:application/json" http://localhost:8080/scratch-jee-webapp/scratch/users/1
+    $ curl -v -XGET -H "Accept:application/json" http://localhost:8080/scratch-roo-webapp/users
+    $ curl -v -XGET -H "Accept:application/json" http://localhost:8080/scratch-roo-webapp/users/1
 
 ###### Update
 Notice that the `"version": 0` attribute, this must be set to be equal to the current version otherwise the update will fail.
 
-    $ curl -v -XPUT -H "Content-Type:application/json" http://localhost:8080/webapp/users/1 -d '{
+    $ curl -v -XPUT -H "Content-Type:application/json" http://localhost:8080/scratch-roo-webapp/users/1 -d '{
         "email": "some.one@there.com",
         "firstName": "Some",
         "lastName": "Two",
@@ -52,4 +52,4 @@ Notice that the `"version": 0` attribute, this must be set to be equal to the cu
     }'
 
 ###### Delete
-    $ curl -XDELETE -H "Accept:application/json" http://localhost:8080/scratch-jee-webapp/scratch/users/1
+    $ curl -v -XDELETE -H "Accept:application/json" http://localhost:8080/scratch-roo-webapp/users/1
