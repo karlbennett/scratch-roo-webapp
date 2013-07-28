@@ -6,15 +6,18 @@ jpa setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT
 
 // Create a new domain class "scratch.roo.webapp.data.User".
 // Integration tests are automatically generated for this entity.
-// Reserved wards are permitted so that the class can be called User.
+// Reserved words are permitted so that the class can be called User.
 // The equals and hashCode methods are added because they are always useful.
-entity jpa --class scratch.roo.webapp.data.User --testAutomatically --permitReservedWords --equals
+// Lastly entity versioning is disabled because that can be a pain when attempting to carry out updates.
+entity jpa --class scratch.roo.webapp.data.User --testAutomatically --permitReservedWords --equals --versionField ""
 
 // Add the fields email, firstName, and lastName to the User class.
 // Also set the email to be unique and not null.
+// Lastly add a created date field that will only ever be populated on the creation of the entity.
 field string email --unique true --notNull true
 field string firstName
 field string lastName
+field date created --type java.util.Date
 
 // Add JSON serialisation support to the User class.
 json all
